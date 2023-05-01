@@ -1,10 +1,9 @@
 package ru.otus.homework.lintchecks
 
-import com.android.tools.lint.checks.infrastructure.TestLintTask
 import com.android.tools.lint.checks.infrastructure.LintDetectorTest
-import com.android.tools.lint.checks.infrastructure.TestMode
-import org.junit.Assert.*
+import com.android.tools.lint.checks.infrastructure.TestLintTask
 import org.junit.Test
+
 class GlobalScopeUsageDetectorTest {
 
     private val lintTask = TestLintTask
@@ -17,7 +16,7 @@ class GlobalScopeUsageDetectorTest {
         lintTask
             .files(
                 LintDetectorTest.kotlin(
-                """
+                    """
                     package ru.otus.homework.linthomework.globalscopeusage
 
                     class GlobalScopeTestCase(private val scope: CoroutineScope) : ViewModel() {
@@ -29,8 +28,8 @@ class GlobalScopeUsageDetectorTest {
                         }
                     }
                 """.trimIndent()
-            )
-        ).run()
+                )
+            ).run()
             .expect(
                 """
                 src/ru/otus/homework/linthomework/globalscopeusage/GlobalScopeTestCase.kt:5: Warning: GlobalScope should not use [GlobalScopeUsage]

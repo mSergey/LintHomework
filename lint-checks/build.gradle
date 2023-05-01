@@ -10,8 +10,8 @@ java {
 
 
 dependencies {
-
-    def lintVersion = "31.0.0"
+    def lintVersion = "30.2.0"
+    compileOnly "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
     compileOnly "com.android.tools.lint:lint-api:$lintVersion"
     compileOnly "com.android.tools.lint:lint-checks:$lintVersion"
     testImplementation "com.android.tools.lint:lint-tests:$lintVersion"
@@ -25,3 +25,4 @@ jar {
         attributes 'Lint-Registry-v2': 'ru.otus.homework.lintchecks.HomeworkIssueRegistry'
     }
 }
+

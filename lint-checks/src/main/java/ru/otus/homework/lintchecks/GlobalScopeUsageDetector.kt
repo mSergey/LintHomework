@@ -14,7 +14,6 @@ import org.jetbrains.uast.UElement
 import org.jetbrains.uast.UQualifiedReferenceExpression
 import org.jetbrains.uast.USimpleNameReferenceExpression
 import org.jetbrains.uast.getContainingUClass
-import org.jline.utils.Log
 
 private const val ID = "GlobalScopeUsage"
 private const val BRIEF_DESCRIPTION = "GlobalScope should not use"
@@ -99,7 +98,6 @@ class GlobalScopeUsageDetector : Detector(), Detector.UastScanner {
 
         private fun UClass.isSuperclassFragment(): Boolean {
             return this.supers.any {
-                println(it.qualifiedName)
                 it.qualifiedName == FRAGMENT_CLASS_QUALIFIED_NAME
             }
         }
