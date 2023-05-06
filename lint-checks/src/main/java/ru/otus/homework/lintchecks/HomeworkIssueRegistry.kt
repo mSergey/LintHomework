@@ -12,7 +12,4 @@ class HomeworkIssueRegistry : IssueRegistry() {
     override val api: Int
         get() = CURRENT_API
 
-
-
-
 }
