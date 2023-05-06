@@ -12,6 +12,7 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
 rootProject.name = "Lint Homework"
 include ':app'
 include ':lint-checks'
